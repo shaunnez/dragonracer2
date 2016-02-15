@@ -1,0 +1,27 @@
+<ion-toolbar dark>
+  <ion-title>Place bet</ion-title>
+</ion-toolbar>
+
+<ion-content class="placebet">
+  
+  <ion-input stacked-label>
+    <ion-label><strong>You could win:</strong> {{ bet.winAmount }}</ion-label>
+    <input type="number" min="1" [max]="config.playerScore" (ngModelChange)="calculateWinAmount()" [(ngModel)]="bet.betAmount" />
+  </ion-input>
+
+  <div *ngIf="warning" padding>
+    <p clear danger><strong>Your bet must be between 0 and {{ config.playerScore}}</strong></p>
+  </div>
+  
+  <div padding>
+    <button full primary (click)="placeBet()">
+      <icon checkmark></icon>
+      Place bet
+    </button>
+ 
+    <button full light (click)="closeModal()">
+      <icon close></icon>
+      Cancel
+    </button>
+  </div>
+</ion-content>

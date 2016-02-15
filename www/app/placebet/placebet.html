@@ -1,0 +1,33 @@
+
+<ion-navbar *navbar dark>
+  <button menuToggle>
+    <icon menu></icon>
+  </button>
+  <ion-title>Placebet</ion-title>
+</ion-navbar>
+
+<ion-content class="placebet">
+  
+  <ion-list>
+    <ion-list-header class="text-center">
+      Points available: {{ config.playerScore }}
+    </ion-list-header>
+    
+    <ion-item *ngFor="#dragon of config.dragons; var index = index" (click)="openBetModal(dragon.name, dragon.weight)">
+      <ion-thumbnail item-left>
+        <img [src]="'img/dragon-' + (index + 1) + '.png'" />
+      </ion-thumbnail>
+      <h2>{{dragon.name}}</h2>
+      <h3>Odds: {{ (dragon.weight / totalWeight * 100).toFixed(2) }}%</h3>
+      
+      <p *ngIf="dragon.positions.length === 0">No games played yet</p>
+      <p *ngIf="dragon.positions.length > 0">Positions: 
+        <label *ngFor="#position of dragon.positions; var index2 = index">
+          {{ getOrdinal(position) }}<span *ngIf="index2 < dragon.positions.length - 1">, </span>
+        </label>
+      </p>
+      <ion-badge item-right primary >{{dragon.score}}</ion-badge> 
+    </ion-item>
+  </ion-list>
+  
+</ion-content>

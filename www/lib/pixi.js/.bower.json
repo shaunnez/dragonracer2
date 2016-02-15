@@ -1,0 +1,30 @@
+{
+  "name": "pixi.js",
+  "main": "bin/pixi.js",
+  "ignore": [
+    "**/.*",
+    "docs",
+    "gulp",
+    "node_modules",
+    "bower_components",
+    "test",
+    "bower.json",
+    "gulpfile.js",
+    "inch.json",
+    "testem.json"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "homepage": "https://github.com/GoodBoyDigital/pixi.js",
+  "version": "3.0.8",
+  "_release": "3.0.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.8",
+    "commit": "5d385885324e97369fd29b686e9e90eb4cefd14a"
+  },
+  "_source": "git://github.com/GoodBoyDigital/pixi.js.git",
+  "_target": "~3.0.8",
+  "_originalSource": "pixi",
+  "_direct": true
+}

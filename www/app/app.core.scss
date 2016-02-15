@@ -1,0 +1,19 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Shared Imports
+// --------------------------------------------------
+// These are the imports which make up the design of this app.
+// By default each design mode includes these shared imports.
+// App Shared Sass variables belong in app.variables.scss.
+
+@import "home/home";
+@import "placebet/placebet";
+@import "options/options";
+@import "game/game";
+
+ion-list-header {
+  background: #efeff4;
+  border-top: 1px solid #c8c7cc;
+  margin-top: -1px;  
+}

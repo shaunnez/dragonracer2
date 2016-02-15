@@ -1,0 +1,95 @@
+
+<ion-navbar *navbar dark>
+  <button menuToggle>
+    <icon menu></icon>
+  </button>
+  <ion-title>Options</ion-title>
+  <button light small class="pull-right" (click)="save()">Save</button>
+</ion-navbar>
+
+<ion-content class="options ionic">
+  
+  <ion-list>
+    <ion-list-header primary>General Options</ion-list-header>
+    <ion-input floating-label>
+      <ion-label>Player name</ion-label>
+      <input type="text" [(ngModel)]="config.playerName" />
+    </ion-input>
+
+    <ion-toggle primary [(ngModel)]="config.useOnlineService" [checked]="config.useOnlineService">Use online service</ion-toggle>
+    
+    <ion-input floating-label *ngIf="config.useOnlineService">
+      <ion-label>Simulator url</ion-label>
+      <input type="text" [(ngModel)]="config.simulatorUrl" />
+    </ion-input>
+    
+    <ion-list-header>Dragons</ion-list-header>
+    <div class="item range range-positive">
+      <div class="item-inner">
+        <icon ion-ios-people is-active="false"></icon>
+        <input type="range" min="2" max="10" [(ngModel)]="config.amountOfDragons">
+        <icon ion-ios-people></icon>
+      </div>
+    </div>
+   
+    <div *ngFor="#dragon of config.dragons; var index = index;">
+      <ion-input floating-label  *ngIf="index < config.amountOfDragons">
+        <ion-label>Odds: {{ (dragon.weight / totalWeight * 100).toFixed(2) }}</ion-label>
+        <input type="text" [(ngModel)]="dragon.name" />
+        <select [(ngModel)]="dragon.weight">
+          <option value="1">Weight: 1</option>
+          <option value="2">Weight: 2</option>
+          <option value="3">Weight: 3</option>
+          <option value="4">Weight: 4</option>
+          <option value="5">Weight: 5</option>
+          <option value="6">Weight: 6</option>
+          <option value="7">Weight: 7</option>
+          <option value="8">Weight: 8</option>
+          <option value="9">Weight: 9</option>
+          <option value="10">Weight: 10</option>     
+        </select>
+      </ion-input>
+    </div>
+    
+    <ion-list-header>Music (Volume: {{config.volume }})</ion-list-header>
+    <ion-toggle primary [(ngModel)]="config.playMusic" [checked]="config.playMusic">Play music</ion-toggle>
+    <div class="item range range-positive">
+      <div class="item-inner">
+        <icon ion-ios-volume-down></icon>
+        <input type="range" min="0" max="1" step="0.1" [(ngModel)]="config.volume">
+        <icon ion-ios-volume-up></icon>
+      </div>
+    </div>
+    
+    <ion-list-header>Animation</ion-list-header>
+    <ion-toggle primary [(ngModel)]="config.animateDragons" [checked]="config.animateDragons">Dragons</ion-toggle>
+    <ion-toggle primary [(ngModel)]="config.animateBackground" [checked]="config.animateBackground">Background</ion-toggle>
+    <ion-toggle primary [(ngModel)]="config.animateSun" [checked]="config.animateSun" >Sun</ion-toggle>
+    
+    
+    <div class="item item-divider">Maximum steps: {{config.maxStepsToTake}}</div>
+    <div class="item range range-positive">
+      <div class="item-inner">
+        <icon ion-ios-fastforward is-active="false"></icon>
+        <input type="range" min="1" max="15" step="1" [(ngModel)]="config.maxStepsToTake">
+        <icon ion-ios-fastforward></icon>
+      </div>
+    </div>
+    
+    <div class="item item-divider">Dragon tween time: {{config.dragonTweenTime}} seconds</div>
+    <div class="item range range-positive">
+      <div class="item-inner">
+        <icon ion-ios-fastforward is-active="false"></icon>
+        <input type="range" min="0.5" max="3" step="0.5" [(ngModel)]="config.dragonTweenTime">
+        <icon ion-ios-fastforward></icon>
+      </div>
+    </div>
+    
+    <div padding>
+      <button block primary class="button button-block button-balanced" (click)="save()">Save</button>
+      <button block danger (click)="reset()">Reset</button>
+      <button block danger (click)="resetScores()">Reset Scores</button>
+    </div>
+    
+  </ion-list>
+</ion-content>

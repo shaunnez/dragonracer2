@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "angular2": "2.0.0-alpha.52",
+    "elastic-progress": "git+https://github.com/codrops/ElasticProgress.git",
+    "es6-promise": "3.0.2",
+    "es6-shim": "0.33.13",
+    "gsap": "^1.18.0",
+    "ionic-framework": "2.0.0-alpha.42",
+    "jquery": "^2.2.0",
+    "json-loader": "^0.5.4",
+    "lodash": "^3.10.1",
+    "pixi-spine": "^1.0.7",
+    "pixi.js": "^3.0.8",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-alpha.14",
+    "transform-loader": "^0.2.3",
+    "zone.js": "0.5.8"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^0.15.9",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-watch": "^4.3.5",
+    "strip-sourcemap-loader": "0.0.1",
+    "typescript": "^1.7.3"
+  },
+  "name": "dragonracer2",
+  "description": "dragonracer2: An Ionic2/Angular2 project featuring pixie (2d animation library), gsap (tween), and audio"
+}

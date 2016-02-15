@@ -1,0 +1,15 @@
+{
+  "name": "pixi-spine",
+  "homepage": "https://github.com/pixijs/pixi-spine",
+  "version": "1.0.6",
+  "_release": "1.0.6",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.6",
+    "commit": "f5f473bb9dfdd88c8e20834564999b575136d1ca"
+  },
+  "_source": "https://github.com/pixijs/pixi-spine.git",
+  "_target": "~1.0.6",
+  "_originalSource": "https://github.com/pixijs/pixi-spine.git",
+  "_direct": true
+}

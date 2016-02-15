@@ -1,0 +1,40 @@
+
+<ion-navbar *navbar dark>
+  <button menuToggle>
+    <icon menu></icon>
+  </button>
+  <ion-title>Dragon Race Game</ion-title>
+</ion-navbar>
+
+<ion-content class="game">
+  <div id="mainContainer"></div>
+  <audio id="audio" loop preload="audo" src="nyancat.mp3"></audio>
+  
+  <div class="md-overlay"></div>
+  <div class="md-modal md-effect-3" *ngIf="winningDragons">
+    <div class="md-content">
+      <h4>Game over!<br/>
+        <span *ngIf="bet.pointsMade > 0">You won {{ bet.pointsMade }} points<br/></span>
+        <span *ngIf="bet.pointsMade < 0">You lost {{ bet.pointsMade }}<br/></span>
+        <span>(Score: {{config.playerScore}} points)</span>
+        <img src="img/badge.png" style="max-width: 100%" /><br/>
+
+        <span>The top {{ winningDragons.length }} positions are</span>
+      </h4>
+      
+      <div class='winner-container'>
+        <p *ngFor="#dragon of winningDragons; var index = index">
+          <span *ngIf='index < 5'>
+          <strong>{{index + 1}}</strong>: {{dragon}}
+          </span>
+        </p>
+      </div>
+      
+      
+      <div class="button-bar">
+        <button class="button button-positive" (click)="resetGame()">New Game</button>
+        <button class="button button-dark" (click)="viewStats()">View stats</button>
+      </div>
+    </div>
+  </div>
+</ion-content>
